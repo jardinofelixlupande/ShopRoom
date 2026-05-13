@@ -57,70 +57,75 @@ const produtos = [
     link: "https://pt.aliexpress.com/item/1005006325764168.html?sourceType=562&pvid=4290ba98-3677-49b8-9cb3-e81d5a841fd8&pdp_ext_f=%7B%22ship_from%22%3A%22CN%22%2C%22sku_id%22%3A%2212000036770721697%22%7D&scm=1007.28480.422277.0&scm-url=1007.28480.422277.0&scm_id=1007.28480.422277.0&pdp_npi=6%40dis%21USD%21US+%2491.26%21US+%2436.31%21%21%21616.59%21245.28%21%400b88a95617786756743676703e0fd7%2112000036770721697%21dsg%21MZ%21%21X%211%210%21c%3A562&spm=a2g0o.tm1000029706.8287340260.d0&aecmd=true",
   },
   {
-    nome: "Organizador de Gavetas Modular Empilhável — Set 6 Peças",
+    nome: "Calma, eu não estou a venda. Só passando para dar Oi!",
     category: "Vestuario",
-    preco: "9.99",
+    preco: "Sem preço",
     precoAntigo: "" /* sem preço antigo */,
     desconto: "" /* sem badge */,
-    avaliacao: "★★★★☆ 4.1",
-    imagem: "", //Link por pôr futuramente
-    link: "https://www.aliexpress.com/item/1005005998877665.html",
+    avaliacao: "★★★★★ 5.0",
+    imagem: "img/lupande.jpeg", //Link por pôr futuramente
+    link: "",
   },
 
   /* ---------- MODA ---------- */
   {
-    nome: "Mochila Impermeável Unissexo 30L para Viagem e Laptop",
+    nome: "Em construção...",
     category: "Moda",
     preco: "18.75",
     precoAntigo: "35.00",
     desconto: "-46%",
     avaliacao: "★★★★★ 4.9",
-    imagem: "", //Link por pôr futuramente
-    link: "https://www.aliexpress.com/item/1005006554433221.html",
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
+    link: "",
   },
   {
-    nome: "Cinto de Couro Genuíno Masculino Automático — Clássico",
+    nome: "Em construção...",
     category: "Moda",
     preco: "7.30",
     precoAntigo: "18.00",
     desconto: "-59%",
     avaliacao: "★★★★☆ 4.4",
-    imagem: "", //Link por pôr futuramente
-    link: "https://www.aliexpress.com/item/1005004321987654.html",
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
+    link: "",
   },
 
   /* ---------- BELEZA ---------- */
   {
-    nome: "Secador de Cabelo Iônico Profissional 2200W Dobrável",
+    nome: "Em construção...",
     category: "Beleza",
     preco: "13.00",
     precoAntigo: "28.00",
     desconto: "-54%",
     avaliacao: "★★★★☆ 4.2",
-    imagem: "", //Link por pôr futuramente
-    link: "https://www.aliexpress.com/item/1005007889900112.html",
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
+    link: "",
   },
 
   /* ---------- DESPORTO ---------- */
   {
-    nome: "Garrafa de Água Termica 500ml Aço Inoxidável — Mantém 24h",
+    nome: "Em construção...",
     category: "Desporto",
     preco: "5.80",
     precoAntigo: "12.00",
     desconto: "-52%",
     avaliacao: "★★★★★ 4.6",
-    imagem: "", //Link por pôr futuramente
-    link: "https://www.aliexpress.com/item/1005006334455667.html",
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
+    link: "",
   },
-
-  /* ---------- ADICIONE MAIS PRODUTOS ABAIXO ----------
-         Copie o bloco entre { } acima e preencha os campos.
-      ------------------------------------------------------ */
+  {
+    nome: "Em construção...",
+    category: "Desporto",
+    preco: "5.80",
+    precoAntigo: "12.00",
+    desconto: "-52%",
+    avaliacao: "★★★★★ 4.6",
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
+    link: "",
+  },
 ]; /* fim do array de produtos */
 
 /* =============================================================
        FUNÇÃO: criar um cartão HTML para cada produto
-       Você não precisa editar esta parte.
     ============================================================= */
 function criarCartao(produto) {
   /* Cria o elemento <a> que envolve o cartão inteiro */
@@ -130,12 +135,12 @@ function criarCartao(produto) {
   link.rel = "noopener noreferrer"; /* segurança */
   link.classList.add("cartao");
 
-  /* Badge de desconto (só aparece se o campo não estiver vazio) */
+  /* Badge de desconto */
   const badgeHTML = produto.desconto
     ? `<span class="badge-desconto">${produto.desconto}</span>`
     : "";
 
-  /* Preço antigo riscado (só aparece se existir) */
+  /* Preço antigo riscado */
   const precoAntigoHTML = produto.precoAntigo
     ? `<span class="cartao-preco-antigo">$${produto.precoAntigo}</span>`
     : "";
