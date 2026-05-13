@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Room</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Nunito:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="logo">Shop<span>Room</span></div>
+
+      <!-- Barra de busca -->
+      <div class="barra-busca">
+        <input type="text" placeholder="Pesquisar produtos..." />
+        <button>🔍</button>
+      </div>
+
+      <!-- Ícones do header 
+     <div class="icones-header">
+        <span title="Favoritos">♡</span>
+        <span title="Carrinho">🛒</span>
+      </div>-->
+    </header>
+
+    <!-- ============================================================
+       BANNER — faixa promocional no topo
+  ============================================================ -->
+    <section class="banner">
+      <h1>Melhores Ofertas do Dia</h1>
+      <p>Produtos selecionados com os melhores preços</p>
+    </section>
+
+    <!-- ============================================================
+       BOTÕES DE category (visual, sem filtro real)
+       Para ativar o filtro, veja o JS no final do ficheiro
+  ============================================================ -->
+    <div class="category">
+      <button class="btn-category ativo" data-category="todos">Todos</button>
+      <button class="btn-category" data-category="eletronicos">
+        Electrónicos
+      </button>
+      <button class="btn-category" data-category="vestuario">Vestuario</button>
+      <button class="btn-category" data-category="moda">Moda</button>
+      <button class="btn-category" data-category="beleza">Beleza</button>
+      <button class="btn-category" data-category="desporto">Desporto</button>
+    </div>
+
+    <!-- ============================================================
+       TÍTULO DA SECÇÃO DE PRODUTOS
+  ============================================================ -->
+    <h2 class="titulo-secao">Produtos em Destaque</h2>
+
+    <div class="grade-produtos" id="grade-produtos">
+      <!-- Bloco de cartões a inserir -->
+    </div>
+
+    <footer>
+      <p>
+        © 2026 ShopRoom | Todos direitos reservados <br />Lupande Jr. | Software
+        Engineer
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
