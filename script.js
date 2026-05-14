@@ -170,17 +170,32 @@ function renderizarProdutos() {
 /* Chama a função quando a página carrega */
 renderizarProdutos();
 
-/* =============================================================
-       BOTÕES DE category — destaca o botão clicado
-       (Para filtrar produtos por category, descomente o código abaixo)
-    ============================================================= */
 function normalizarTexto(texto) {
   return texto
     .toLowerCase() // Converte para minúsculas
     .normalize("NFD") // Remove acentos
     .replace(/[\u0300-\u036f]/g, ""); // Remove marcas diacríticas
 }
+/* =============================================================
+       FUNÇÃO: PESQUISAR PRODUTOS
+    ============================================================= */
+const barraPesquisa = document.getElementById("barra-pesquisa");
 
+barraPesquisa.addEventListener("input", function () {
+  const textoPesquisa = normalizarTexto(this.value); // Texto digitado pelo usuário
+  const grade = document.getElementById("grade-produtos");
+  grade.innerHTML = ""; // Limpa a grade de produtos
+
+  const filtrados = produtos.filter((produto) =>
+    normalizarTexto(produto.nome).includes(textoPesquisa)
+  ); // Filtra os produtos cujo nome contém o texto pesquisado
+
+  filtrados.forEach((p) => grade.appendChild(criarCartao(p))); // Renderiza os produtos filtrados
+});
+/* =============================================================
+       BOTÕES DE category — destaca o botão clicado
+       (Para filtrar produtos por category, descomente o código abaixo)
+    ============================================================= */
 const botoesCat = document.querySelectorAll(".btn-category");
 
 botoesCat.forEach(function (botao) {
