@@ -1,22 +1,8 @@
-/* =============================================================
-       LISTA DE PRODUTOS
-       ➡ EDITE AQUI para adicionar, remover ou alterar produtos.
-
-       Cada produto tem:
-         nome        — nome que aparece no cartão
-         category   — etiqueta da category
-         preco       — preço actual (string, ex: "12.99")
-         precoAntigo — preço riscado (deixe "" para não mostrar)
-         desconto    — texto do badge (ex: "-30%"). Deixe "" para ocultar
-         avaliacao   — estrelas (ex: "★★★★☆ 4.2")
-         imagem      — URL da foto do produto (use link directo da imagem)
-         link        — URL do produto no AliExpress (copie o link do produto)
-    ============================================================= */
 const produtos = [
   /* ---------- ELECTRÓNICA ---------- */
   {
     nome: "Fone de Ouvido Bluetooth TWS Sem Fio com Controle por Toque e Longa Duração de Bateria para Android, iOS e PC",
-    category: "Electrónica",
+    category: "electronica",
     preco: "4.05",
     precoAntigo: "17.13",
     desconto: `-${Math.round(((17.13 - 4.05) / 17.13) * 100)}%`, // Calcula o desconto real
@@ -26,7 +12,7 @@ const produtos = [
   },
   {
     nome: "Anel multifuncional inteligente de aço inoxidável para Vestuariol, sensação de humor, anéis sensíveis à temperatura, joias à prova d'água",
-    category: "Electrónica",
+    category: "electronica",
     preco: Number(0.38),
     precoAntigo: Number(0.65),
     desconto: `-${Math.round(((0.65 - 0.38) / 0.65) * 100)}%`, // Calcula o desconto real
@@ -36,7 +22,7 @@ const produtos = [
   },
   {
     nome: "Liquidificador doméstico espremedor de leite de soja máquina de quebrar parede comercial máquina de lama auxiliar máquina de alimentos máquina de suco",
-    category: "Electrónica",
+    category: "electronica",
     preco: "17.98",
     precoAntigo: "33.30",
     desconto: `-${Math.round(((33.3 - 17.98) / 33.3) * 100)}%`,
@@ -57,13 +43,13 @@ const produtos = [
     link: "https://pt.aliexpress.com/item/1005006325764168.html?sourceType=562&pvid=4290ba98-3677-49b8-9cb3-e81d5a841fd8&pdp_ext_f=%7B%22ship_from%22%3A%22CN%22%2C%22sku_id%22%3A%2212000036770721697%22%7D&scm=1007.28480.422277.0&scm-url=1007.28480.422277.0&scm_id=1007.28480.422277.0&pdp_npi=6%40dis%21USD%21US+%2491.26%21US+%2436.31%21%21%21616.59%21245.28%21%400b88a95617786756743676703e0fd7%2112000036770721697%21dsg%21MZ%21%21X%211%210%21c%3A562&spm=a2g0o.tm1000029706.8287340260.d0&aecmd=true",
   },
   {
-    nome: "Calma, eu não estou a venda. Só passando para dar Oi!",
+    nome: "Em construção",
     category: "Vestuario",
-    preco: "Sem preço",
-    precoAntigo: "" /* sem preço antigo */,
-    desconto: "" /* sem badge */,
+    preco: "Preço",
+    precoAntigo: "old price" /* sem preço antigo */,
+    desconto: "-100%" /* sem badge */,
     avaliacao: "★★★★★ 5.0",
-    imagem: "img/lupande.jpeg", //Link por pôr futuramente
+    imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
   },
 
@@ -71,9 +57,9 @@ const produtos = [
   {
     nome: "Em construção...",
     category: "Moda",
-    preco: "18.75",
-    precoAntigo: "35.00",
-    desconto: "-46%",
+    preco: "Preço",
+    precoAntigo: "old price",
+    desconto: "-100%",
     avaliacao: "★★★★★ 4.9",
     imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
@@ -81,9 +67,9 @@ const produtos = [
   {
     nome: "Em construção...",
     category: "Moda",
-    preco: "7.30",
-    precoAntigo: "18.00",
-    desconto: "-59%",
+    preco: "Preço",
+    precoAntigo: "old price",
+    desconto: "-100%",
     avaliacao: "★★★★☆ 4.4",
     imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
@@ -93,9 +79,9 @@ const produtos = [
   {
     nome: "Em construção...",
     category: "Beleza",
-    preco: "13.00",
-    precoAntigo: "28.00",
-    desconto: "-54%",
+    preco: "Preço",
+    precoAntigo: "old price",
+    desconto: "-100%",
     avaliacao: "★★★★☆ 4.2",
     imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
@@ -105,9 +91,9 @@ const produtos = [
   {
     nome: "Em construção...",
     category: "Desporto",
-    preco: "5.80",
-    precoAntigo: "12.00",
-    desconto: "-52%",
+    preco: "Preço",
+    precoAntigo: "old price",
+    desconto: "-100%",
     avaliacao: "★★★★★ 4.6",
     imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
@@ -115,9 +101,9 @@ const produtos = [
   {
     nome: "Em construção...",
     category: "Desporto",
-    preco: "5.80",
-    precoAntigo: "12.00",
-    desconto: "-52%",
+    preco: "Preço",
+    precoAntigo: "old price",
+    desconto: "-100%",
     avaliacao: "★★★★★ 4.6",
     imagem: "img/wait.jpeg", //Link por pôr futuramente
     link: "",
@@ -177,7 +163,7 @@ function renderizarProdutos() {
 
   produtos.forEach(function (produto) {
     const cartao = criarCartao(produto);
-    grade.appendChild(cartao); /* adiciona à grade */
+    grade.appendChild(cartao);
   });
 }
 
@@ -188,6 +174,13 @@ renderizarProdutos();
        BOTÕES DE category — destaca o botão clicado
        (Para filtrar produtos por category, descomente o código abaixo)
     ============================================================= */
+function normalizarTexto(texto) {
+  return texto
+    .toLowerCase() // Converte para minúsculas
+    .normalize("NFD") // Remove acentos
+    .replace(/[\u0300-\u036f]/g, ""); // Remove marcas diacríticas
+}
+
 const botoesCat = document.querySelectorAll(".btn-category");
 
 botoesCat.forEach(function (botao) {
@@ -198,16 +191,20 @@ botoesCat.forEach(function (botao) {
     /* Adiciona "ativo" apenas no botão clicado */
     this.classList.add("ativo");
 
-    /* --- FILTRO REAL (descomente para activar) ---
-        const categoryEscolhida = this.textContent;
-        const grade = document.getElementById('grade-produtos');
-        grade.innerHTML = '';
+    /* --- FILTRO REAL --- */
+    const categoryEscolhida = normalizarTexto(
+      this.getAttribute("data-category")
+    );
+    const grade = document.getElementById("grade-produtos");
+    grade.innerHTML = ""; // Limpa apenas a grade de produtos
 
-        const filtrados = categoryEscolhida === 'Todos'
-          ? produtos
-          : produtos.filter(p => p.category === categoryEscolhida);
+    const filtrados =
+      categoryEscolhida === "todos"
+        ? produtos // Mostra todos os produtos se "todos" for selecionado
+        : produtos.filter(
+            (p) => normalizarTexto(p.category) === categoryEscolhida
+          ); // Filtra pela categoria
 
-        filtrados.forEach(p => grade.appendChild(criarCartao(p)));
-        --- fim do filtro --- */
+    filtrados.forEach((p) => grade.appendChild(criarCartao(p))); // Renderiza os produtos filtrados
   });
 });
