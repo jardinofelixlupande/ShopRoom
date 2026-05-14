@@ -180,10 +180,22 @@ function normalizarTexto(texto) {
        FUNÇÃO: PESQUISAR PRODUTOS
     ============================================================= */
 const barraPesquisa = document.getElementById("barra-pesquisa");
+const grade = document.getElementById("grade-produtos");
+const banner = document.querySelector(".banner");
+const categorias = document.querySelector(".category");
 
 barraPesquisa.addEventListener("input", function () {
   const textoPesquisa = normalizarTexto(this.value); // Texto digitado pelo usuário
-  const grade = document.getElementById("grade-produtos");
+
+  // Oculta o banner e as categorias durante a pesquisa
+  if (textoPesquisa.length > 0) {
+    banner.classList.add("ocultar");
+    categorias.classList.add("ocultar");
+  } else {
+    banner.classList.remove("ocultar");
+    categorias.classList.remove("ocultar");
+  }
+
   grade.innerHTML = ""; // Limpa a grade de produtos
 
   const filtrados = produtos.filter((produto) =>
